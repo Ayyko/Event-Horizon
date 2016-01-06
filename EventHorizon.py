@@ -29,7 +29,7 @@ class Game:
         self.willInvincible = False
         self.moveRight = self.moveLeft = self.moveDown = self.moveUp = self.shoot = False
         self.boss = Boss1()
-        self.spawnPos = [(727, 246), (331, 129), (304, 588), (631, 588), (1135, 567), (1072, 126), (115, 96)]
+        self.spawnPos = [(727, 246), (331, 129), (304, 588), (631, 588), (1135, 567), (1072, 126), (115, 96), (1198, 354), (97, 360)]
         self.heartPos = [(20,10), (50,10), (80,10), (110,10), (140,10)]
         self.allEnemies = []
         self.alive = 0
@@ -175,6 +175,8 @@ class Game:
                         self.rounds(1)
                     if event.key == ord('e'):
                         self.rounds(-1)
+                    if event.key == ord('z'):
+                        self.rounds(-2)
                     if event.key == ord('q'):
                         pygame.quit()
                         sys.exit()
@@ -457,6 +459,12 @@ class Game:
             self.menu()
         if roundNum == -1:
             self.maxspawn = 15
+            self.spawns = sys.maxint
+            self.alive = sys.maxint
+            self.mainLoop()
+            self.menu()
+        if roundNum == -2:
+            self.maxspawn = 0
             self.spawns = sys.maxint
             self.alive = sys.maxint
             self.mainLoop()

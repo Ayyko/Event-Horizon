@@ -37,8 +37,8 @@ class Enemy:
         self.eAngle = 0     # Initial face direction is up
 
         # Sets velocity to 1 for each axis of movement
-        self.xVel = 1.2
-        self.yVel = 1.2
+        self.xVel = 2.5
+        self.yVel = 2.5
 
         # Initial rotate to player and draw
         self.eRotate(self.findDirection)
@@ -82,8 +82,8 @@ class Enemy:
             y2+=self.offSet
 
         # Resets enemy vel to 0. Breaks if we remove, don't know why.
-        self.xVel = 1.2
-        self.yVel = 1.2
+        self.xVel = 2.5
+        self.yVel = 2.5
 
         # This is to try to keep the enemies from conglomerating
         randAdd = random.randint(0, 1)

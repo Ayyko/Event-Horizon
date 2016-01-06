@@ -23,16 +23,16 @@ class Projectile:
         self.xMaxCalc = self.pos[0]
         self.yMaxCalc = self.pos[1]
         if direction == 'up':
-            self.yVel = -10
+            self.yVel = -20
             self.yMax = self.yMaxCalc - 100
         elif direction == 'down':
-            self.yVel = 10
+            self.yVel = 20
             self.yMax = self.yMaxCalc + 100
         elif direction == 'left':
-            self.xVel = -10
+            self.xVel = -20
             self.xMax = self.xMaxCalc - 100
         else:
-            self.xVel = 10
+            self.xVel = 20
             self.xMax = self.xMaxCalc + 100
                 
     def drawSelf(self, surface):
